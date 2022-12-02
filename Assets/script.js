@@ -5,9 +5,35 @@ const weatherForm = document.querySelector(".weatherForm");
 const weatherInput = document.querySelector("#weatherInput");
 const searchButton = document.querySelector("#searchButton");
 const currentForecast = document.querySelector(".current-forecast");
+const fiveDayForecastDiv = document.querySelector(".five-day-forecast");
+const citySearch = JSON.parse(localStorage.getItem("cities")) || [];
+const previousCities = document.querySelector("#previous-cities");
 
 // Functions
 
+function init() {
+  citySearch.forEach((city) => {
+    previousCities.innerHTML += `<button class="flex flex-wrap p-2 m-2 border" data-city="${city}">${city}</button>`;
+  });
+}
+
+// Five Day Forecast
+function fiveDayForecast(forecastData) {
+  console.log(forecastData);
+
+  forecastData.forEach((day) => {
+    let midnight = day.dt_txt.split(" ")[1];
+
+    if (midnight === "00:00:00") {
+      const date = dayjs(day.dt_txt).format("M/D/YYYY");
+      const dayCard = document.createElement("div");
+      const iconURL = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+      dayCard.innerHTML += `<div class= "forecast-day p-6 border"><div>${date}</div><div>${day.main.temp}</div><div>${day.wind.speed}</div><div>${day.main.humidity}</div> <img src="${iconURL}"></div>`;
+      fiveDayForecastDiv.append(dayCard);
+    }
+  });
+}
+// Current Forecast: Needs to be at top with the 5 day forecast below.
 function renderCityWeather(city, weather) {
   const date = dayjs().format("M/D/YYYY");
   const temp = weather.main.temp;
@@ -26,30 +52,31 @@ function renderCityWeather(city, weather) {
   wind.setAttribute("class", "card-text");
   temperature.setAttribute("class", "card-text");
   weatherIcon.setAttribute("class", "weather-img");
-  weatherIcon.setAttribute("class", iconURL);
+  weatherIcon.setAttribute("src", iconURL);
   weatherIcon.setAttribute("class", iconDescription);
   cardHeading.setAttribute("class", "h3 card-title");
   cardBG.setAttribute("class", "background");
-  card.setAttribute("class", "card");
+  card.setAttribute("class", "card m-2 border-4 text-center");
   cardHeading.textContent = `${city}(${date})`;
   cardHeading.append(weatherIcon);
   temperature.textContent = `Temperature: ${temp} F°`;
-  humidityElement.textContent = `Humidity: ${humidity}`;
-  wind.textContent = `Wind Speed: ${windMPH}`;
-  cardBG.append(cardHeading, temperature, wind, humidityElement);
+  humidityElement.textContent = `Humidity: ${humidity} Percent`;
+  wind.textContent = `Wind Speed: ${windMPH} MPH`;
+  cardBG.append(cardHeading, temperature, wind, humidityElement, weatherIcon);
   card.append(cardBG);
   currentForecast.append(card);
 }
 
 function renderItems(city, data) {
   renderCityWeather(city, data.list[0], data.city.timezone);
+  fiveDayForecast(data.list);
 }
 
 function weatherResponse(location) {
   let { lat } = location;
   let { lon } = location;
   let city = location.name;
-  let apiURL = `${baseURL}/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiURL = `${baseURL}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
   fetch(apiURL)
     .then(function (response) {
@@ -81,15 +108,22 @@ function getWeather(search) {
 }
 
 function handleForm(event) {
-  if (!weatherInput.value) {
-    return;
+  currentForecast.innerHTML = "";
+  fiveDayForecastDiv.innerHTML = "";
+  let city = event.target.getAttribute("data-city") || weatherInput.value;
+
+  if (!citySearch.includes(city) && city !== "") {
+    citySearch.push(city);
+    localStorage.setItem("cities", JSON.stringify(citySearch));
   }
 
   event.preventDefault();
-  const search = weatherInput.value.trim();
+  const search = city.trim();
   getWeather(search);
   weatherInput.value = "";
 }
 
 // Event Listeners
+init();
 weatherForm.addEventListener("submit", handleForm);
+previousCities.addEventListener("click", handleForm);

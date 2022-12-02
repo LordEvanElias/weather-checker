@@ -6,17 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather Thingy</title>
 </head>
 
 <body>
 
-    <form class="weatherForm">
-        <input type="text" id="weatherInput">
-        <button id="searchButton">Search</button>
+    <header class="border-b-2 m-2 p-2 text-center bg-teal-400 text-4xl">Weather Thingy</header>
+
+    <form class="weatherForm flex flex-wrap justify-left">
+        <input class="border" type="text" id="weatherInput">
+        <button class="border p-1" id="searchButton">Search</button>
     </form>
+
+    <div id="previous-cities"></div>
+
     <div class="current-forecast">
 
+    </div>
+
+    <div class='five-day-forecast flex p-4 justify-around'>
 
     </div>
 
