@@ -5,3 +5,22 @@ head,body,footer
 header{
     font-family: 'Anton', sans-serif;
 }
+
+.iconDescription {
+    position:absolute;
+    top:50%;
+    left:50%;
+
+}
+
+.current-forecast img{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   margin-left: 49%;
+}
+
+.weather-wrapper {
+    width:100%;
+}
+
