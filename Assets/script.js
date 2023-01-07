@@ -65,6 +65,7 @@ function renderCityWeather(city, weather) {
   cardBG.append(cardHeading, temperature, wind, humidityElement, weatherIcon);
   card.append(cardBG);
   currentForecast.append(card);
+  currentForecast.setAttribute("class", "visible")
 }
 
 function renderItems(city, data) {
