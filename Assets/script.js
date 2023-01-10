@@ -13,7 +13,7 @@ const previousCities = document.querySelector("#previous-cities");
 
 function init() {
   citySearch.forEach((city) => {
-    previousCities.innerHTML += `<button id="no-spread" class="flex flex-wrap p-2 m-2 border" data-city="${city}">${city}</button>`;
+    previousCities.innerHTML += `<button id="no-spread" class="flex flex-wrap p-2 m-2 border rounded-md bg-green-600" data-city="${city}">${city}</button>`;
   });
 }
 
@@ -56,7 +56,7 @@ function renderCityWeather(city, weather) {
   weatherIcon.setAttribute("class", iconDescription);
   cardHeading.setAttribute("class", "h3 card-title");
   cardBG.setAttribute("class", "background");
-  card.setAttribute("class", "card text-center align-middle ");
+  card.setAttribute("class", "card text-center");
   cardHeading.textContent = `${city}(${date})`;
   cardHeading.append(weatherIcon);
   temperature.textContent = `Temperature: ${temp} F°`;
