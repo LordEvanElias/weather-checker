@@ -14,20 +14,28 @@
 
     <header class="border-b-2 m-2 p-2 text-center bg-teal-400 text-4xl">Weather Thingy</header>
 
-    <form class="weatherForm flex flex-wrap">
-        <input class="border" type="text" id="weatherInput">
-        <button class="border p-1" id="searchButton">Search</button>
-    </form>
+    <div class="weather-wrapper">
 
-    <div class="weather-wrapper flex row">
+        <div class="side-bar-form">
 
-        <div id="previous-cities"></div>
+            <form class="weatherForm flex flex-wrap">
+                <input class="border" type="text" id="weatherInput">
+                <button class="border p-1" id="searchButton">Search</button>
+            </form>
+
+            <div id="previous-cities"></div>
+
+        </div>
+
+
+
 
         <div class="forecast-wrapper">
             <div class="current-forecast flex object-right p-4 w-full border-4, justify-center hidden "></div>
             <div class='five-day-forecast flex p-4 justify-around'></div>
         </div>
     </div>
+
 
 
 

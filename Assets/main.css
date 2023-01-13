@@ -3,6 +3,7 @@
 head,body,footer
 
 header{
+    width: 100%;
     font-family: 'Anton', sans-serif;
 }
 
@@ -22,8 +23,15 @@ header{
 
 .weather-wrapper {
     width:100%;
+    display: flex;
+    flex-direction: row;
+   
 }
 
 .forecast-wrapper{
-    margin-left: 20%;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    }
+
