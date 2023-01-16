@@ -35,3 +35,10 @@ header{
     width: 100%;
     }
 
+#previous-cities{
+    flex-direction: column;
+    flex:auto;
+    display:inline-flex;
+    padding:1rem;
+
+}

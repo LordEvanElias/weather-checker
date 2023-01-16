@@ -13,7 +13,7 @@ const previousCities = document.querySelector("#previous-cities");
 
 function init() {
   citySearch.forEach((city) => {
-    previousCities.innerHTML += `<button id="no-spread" class="flex flex-wrap p-2 m-2 border rounded-md bg-green-600" data-city="${city}">${city}</button>`;
+    previousCities.innerHTML += `<button id="no-spread" class="previous-cities-button" data-city="${city}">${city}</button>`;
   });
 }
 
@@ -28,7 +28,7 @@ function fiveDayForecast(forecastData) {
       const date = dayjs(day.dt_txt).format("M/D/YYYY");
       const dayCard = document.createElement("div");
       const iconURL = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
-      dayCard.innerHTML += `<div class= "forecast-day p-6 border"><div>${date}</div><div>${day.main.temp}</div><div>${day.wind.speed}</div><div>${day.main.humidity}</div> <img src="${iconURL}"></div>`;
+      dayCard.innerHTML += `<div class= "day-card"><div>${date}</div><div>${day.main.temp}</div><div>${day.wind.speed}</div><div>${day.main.humidity}</div> <img src="${iconURL}"></div>`;
       fiveDayForecastDiv.append(dayCard);
     }
   });
@@ -56,7 +56,7 @@ function renderCityWeather(city, weather) {
   weatherIcon.setAttribute("class", iconDescription);
   cardHeading.setAttribute("class", "h3 card-title");
   cardBG.setAttribute("class", "background");
-  card.setAttribute("class", "card text-center");
+  card.setAttribute("class", "card");
   cardHeading.textContent = `${city}(${date})`;
   cardHeading.append(weatherIcon);
   temperature.textContent = `Temperature: ${temp} F°`;
@@ -65,7 +65,7 @@ function renderCityWeather(city, weather) {
   cardBG.append(cardHeading, temperature, wind, humidityElement, weatherIcon);
   card.append(cardBG);
   currentForecast.append(card);
-  currentForecast.setAttribute("class", "visible");
+
 }
 
 function renderItems(city, data) {
