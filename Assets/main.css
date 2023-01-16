@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-head,body,footer
+body{
+font-family: 'Anton', sans-serif;
+background-color: aquamarine;
+}
 
 header{
     width: 100%;
-    font-family: 'Anton', sans-serif;
+    text-align: center;
+    border: solid seagreen 2px ;
+    background-color: skyblue;
 }
 
 .iconDescription {
@@ -40,5 +45,16 @@ header{
     flex:auto;
     display:inline-flex;
     padding:1rem;
+}
 
+.previous-cities-button{
+    margin-top: 10px;
+    border: solid 1px;
+    border-radius: 6px;
+    background-color: skyblue;
+    color: indigo;
+}
+
+.side-bar-form{
+    padding: 2rem;
 }
