@@ -19,12 +19,23 @@ header{
 
 }
 
+#invisible{
+visibility: hidden;
+}
+
+.current-forecast{
+    padding: 1rem;
+    margin: 1rem;
+    border: solid navy;
+}
+
 .current-forecast img{
    display:flex;
    justify-content:center;
    align-items:center;
-   margin-left: 49%;
+    
 }
+
 
 .weather-wrapper {
     width:100%;
@@ -33,13 +44,19 @@ header{
    
 }
 
+.five-day-forecast{
+    display: flex;
+    margin: 1rem;
+}
+
 .forecast-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    }
+}
 
+    
 #previous-cities{
     flex-direction: column;
     flex:auto;

@@ -8,6 +8,7 @@ const currentForecast = document.querySelector(".current-forecast");
 const fiveDayForecastDiv = document.querySelector(".five-day-forecast");
 const citySearch = JSON.parse(localStorage.getItem("cities")) || [];
 const previousCities = document.querySelector("#previous-cities");
+const forecastWrapper = document.querySelector(".forecast-wraper");
 
 // Functions
 
@@ -65,7 +66,7 @@ function renderCityWeather(city, weather) {
   cardBG.append(cardHeading, temperature, wind, humidityElement, weatherIcon);
   card.append(cardBG);
   currentForecast.append(card);
-
+  document.getElementById("invisible").style.visibility = "visible";
 }
 
 function renderItems(city, data) {
