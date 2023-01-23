@@ -3,6 +3,8 @@
 body{
 font-family: 'Anton', sans-serif;
 background-color: aquamarine;
+margin: 0;
+padding: 0;
 }
 
 header{
@@ -12,36 +14,28 @@ header{
     background-color: skyblue;
 }
 
-.iconDescription {
-    position:absolute;
-    top:50%;
-    left:50%;
+
+.all-of-it{
+    display: flex;
+    flex-direction: column;
 
 }
-
-#invisible{
-visibility: hidden;
-}
-
 .current-forecast{
     padding: 1rem;
     margin: 1rem;
     border: solid navy;
+    flex: 1;
 }
 
 .current-forecast img{
-   display:flex;
-   justify-content:center;
-   align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     
 }
 
-
-.weather-wrapper {
-    width:100%;
-    display: flex;
-    flex-direction: row;
-   
+.dayCardWrapper{
+    margin: 1rem;
 }
 
 .five-day-forecast{
@@ -49,18 +43,44 @@ visibility: hidden;
     margin: 1rem;
 }
 
+.five-day-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .forecast-wrapper{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    position: relative;
 }
+
+.iconDescription {
+    position:absolute;
+    top:50%;
+    left:50%;
+    
+}
+
+#invisible{
+    visibility: hidden;
+}
+
+
+
+
+.top-section{
+    display:flex;
+    flex-direction: row;
+
+}
+
 
     
 #previous-cities{
     flex-direction: column;
-    flex:auto;
-    display:inline-flex;
+    flex: 1;
+    display:flex;
     padding:1rem;
 }
 
@@ -73,5 +93,20 @@ visibility: hidden;
 }
 
 .side-bar-form{
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
+}
+
+
+@media screen and (max-width:768px) {
+    .top-section{
+        flex-direction: column;
+    }
+
+    .five-day-forecast{
+        flex-direction: column;
+    }
+
+
 }

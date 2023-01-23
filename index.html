@@ -11,29 +11,38 @@
 
 <body class="body">
 
-    <header>Weather Thingy</header>
+    <div class="all-of-it">
 
-    <div class="weather-wrapper">
+        <header>Weather Thingy</header>
 
-        <div class="side-bar-form">
+        <div class="top-section">
 
-            <form class="weatherForm">
-                <input class="border" type="text" id="weatherInput">
-                <button class="input-button" id="searchButton">Search</button>
-            </form>
 
-            <div id="previous-cities"></div>
+            <div class="side-bar-form">
+
+                <form class="weatherForm">
+                    <input class="border" type="text" id="weatherInput">
+                    <button class="input-button" id="searchButton">Search</button>
+                </form>
+
+                <div id="previous-cities"></div>
+
+            </div>
+
+
+
+
+            <div class="forecast-wrapper">
+                <div class="current-forecast" id="invisible"></div>
+            </div>
+
+
 
         </div>
 
-
-
-
-        <div class="forecast-wrapper">
-            <div class="current-forecast" id="invisible"></div>
+        <div class="five-day-section">
             <div class='five-day-forecast'></div>
         </div>
-    </div>
 
 
 

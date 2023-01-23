@@ -28,6 +28,7 @@ function fiveDayForecast(forecastData) {
     if (midnight === "00:00:00") {
       const date = dayjs(day.dt_txt).format("M/D/YYYY");
       const dayCard = document.createElement("div");
+      dayCard.setAttribute("class", "dayCardWrapper");
       const iconURL = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
       dayCard.innerHTML += `<div class= "day-card"><div>${date}</div><div>${day.main.temp}</div><div>${day.wind.speed}</div><div>${day.main.humidity}</div> <img src="${iconURL}"></div>`;
       fiveDayForecastDiv.append(dayCard);
