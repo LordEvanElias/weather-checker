@@ -25,12 +25,17 @@ header{
     margin: 1rem;
     border: solid navy;
     flex: 1;
+    background-color: royalblue;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
 }
 
 .current-forecast img{
     display:flex;
     justify-content:center;
     align-items:center;
+   
     
 }
 
@@ -41,6 +46,12 @@ header{
 .five-day-forecast{
     display: flex;
     margin: 1rem;
+    text-align: center;
+    border: solid navy;
+    background: skyblue;
+    border-radius: 10px;
+    color: white;
+    
 }
 
 .five-day-section{
@@ -96,6 +107,12 @@ header{
     display: flex;
     flex-direction: column;
     padding: 2rem;
+}
+
+.input-button{
+    border-radius: 6px;
+    background: skyblue;
+    border: solid 1px navy;
 }
 
 
