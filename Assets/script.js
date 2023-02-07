@@ -34,6 +34,7 @@ function fiveDayForecast(forecastData) {
       fiveDayForecastDiv.append(dayCard);
     }
   });
+  document.getElementById("invisible").style.visibility = "visible";
 }
 // Current Forecast: Needs to be at top with the 5 day forecast below.
 function renderCityWeather(city, weather) {
