@@ -1,6 +1,6 @@
-# weather-thingy
+# weather-checker
 
-The Weather Thingy is an app where you can check the current forecast and the next 5 day forecast for a city of your choosing.
+The Weather Checker is an app where you can check the current forecast and the next 5 day forecast for a city of your choosing.
 
 ## Usage
 
