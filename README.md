@@ -1,17 +1,41 @@
 # weather-checker
 
-The Weather Checker is an app where you can check the current forecast and the next 5 day forecast for a city of your choosing.
+  <img src="https://img.shields.io/badge/license-None-blue.svg">
+   
+  
+  # License 
+  
+  > This project is licensed under None;
+  
+  # Description
 
-## Usage
+> The Weather Checker is an app where a user can check the current forecast and a 5 day forecast of a location of their choosing.
 
-Click on the search bar and enter a city name. (For cities that have multiples, enter the state, zip code, etc.) Click search and the current forecast will appear on top and the 5 day forecast will appear on the bottom.
+# Table of Contents
 
-Upon page refresh, buttons will appear on the left for previously searched cities. Click on one to bring up the forecast.
+- [Installaton](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Tests](#tests)
 
-```
+- [License](#license)
 
+# Installation
 
+> Download the application on github and then open the index.html file in your browser.
 
-## Link to application
-https://lordevanelias.github.io/weather-thingy/
-```
+# Usage
+
+> Enter the city you would like to have a forecast made for in the search bar on the left. Then, the details will populate on the right. Additionally, previous cities will populate on the left, under the search bar, so you can easily navigate back to them without typing.
+
+# Contribution
+
+> LordEvanElias
+
+# Tests
+
+> N/A
+
+# Questions
+
+## For more details, please contact me at elias_evan@yahoo.com
